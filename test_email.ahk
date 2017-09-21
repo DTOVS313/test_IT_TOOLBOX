@@ -74,11 +74,25 @@ Return
 ;----------------------------------------------------------------------
 ;-----------------Email request automation -------------------------------------------
 ;----------------------------------------------------------------------
+emailaddress = ""
+password = ""
+NumpadEnter & Numpad1::
+	Send, {ctrl down}c{ctrl up} ; copies highlighted text to clipboard
+	emailaddress:=clipboard ; store clipboard contents into var
+	clipboard := ""
+	Send, {ctrl down}c{ctrl up} ; copies highlighted text to clipboard
+	password:=clipboard ; store clipboard contents into var
+Return
+NumpadEnter & Numpad2::
+	SendInput, %emailaddress% %password%
+/*
+;----------------------------------------------------------------------
+;-----------------Email request automation -------------------------------------------
+;----------------------------------------------------------------------
 NumpadEnter & Numpad1::
 Send, {ctrl down}c{ctrl up}
 SendInput, {ctrl down}v{ctrl up}
 Return
-/*
 NumpadEnter & Numpad2::
 Return
 NumpadEnter & Numpad3::
