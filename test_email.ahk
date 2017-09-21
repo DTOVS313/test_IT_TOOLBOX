@@ -84,7 +84,7 @@ NumpadEnter & Numpad1::
 	password:=clipboard ; store clipboard contents into var
 Return
 NumpadEnter & Numpad2::
-	SendInput, %emailaddress% %password%
+	SendInput, %emailaddress password%
 /*
 ;----------------------------------------------------------------------
 ;-----------------Email request automation -------------------------------------------
